@@ -1,0 +1,45 @@
+{% extends 'basepage.html.twig' %}
+
+{% block title %}
+	Edit User
+{% endblock %}
+
+{% block body %}
+	<div style="padding: 20px;">
+
+		<a style="margin-top: 50px; margin-bottom: 10px;" href="{{ path('app_home_front') }}">back Home</a>
+		<h1>Edit Profile</h1>
+
+		{{ form_start(form,{'attr': {'novalidate': 'novalidate'}}) }}
+		<div class="uk-width-1-1 uk-margin">
+			{{form_label(form.email,'Email : ',{'attr':{'class':'uk-form-label'}})}}
+			{{form_widget(form.email,{'attr':{'class':'uk-input uk-form-large'}})}}
+			{{ form_errors(form.email,{'attr':{'class':'uk-input uk-form-large'}}) }}
+		</div>
+
+		<div class="uk-width-1-1 uk-margin">
+			{{form_label(form.prenom,'Prenom : ',{'attr':{'class':'uk-form-label'}})}}
+			{{form_widget(form.prenom,{'attr':{'class':'uk-input uk-form-large'}})}}
+			{{ form_errors(form.prenom,{'attr':{'class':'uk-input uk-form-large'}}) }}
+		</div>
+
+		<div class="uk-width-1-1 uk-margin">
+			{{form_label(form.nom,'Nom : ',{'attr':{'class':'uk-form-label'}})}}
+			{{form_widget(form.nom,{'attr':{'class':'uk-input uk-form-large'}})}}
+			{{ form_errors(form.nom,{'attr':{'class':'uk-input uk-form-large'}}) }}
+		</div>
+
+		<div class="uk-width-1-1 uk-margin">
+			{{form_label(form.password,'Password : ',{'attr':{'class':'uk-form-label'}})}}
+			{{form_widget(form.password,{'attr':{'class':'uk-input uk-form-large'}})}}
+			{{ form_errors(form.password,{'attr':{'class':'uk-input uk-form-large'}}) }}
+		</div>
+
+		<div class="uk-width-1-1 uk-text-center">
+			<button type="submit" class="uk-button uk-button-primary uk-button-large">Update</button>
+		</div>
+		{{ form_end(form) }}
+
+		{{ include('user/_delete_form.html.twig') }}
+	</div>
+{% endblock %}

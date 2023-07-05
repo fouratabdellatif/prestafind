@@ -1,0 +1,44 @@
+{% extends 'home/base.html.twig' %}
+
+{% block title %}Adresse{% endblock %}
+
+{% block content %}
+<div style="padding: 20px;">
+    <h1>Adresse</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>NumBatiment</th>
+                <td>{{ adresse.numBatiment }}</td>
+            </tr>
+            <tr>
+                <th>Rue</th>
+                <td>{{ adresse.rue }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ adresse.ville }}</td>
+            </tr>
+            <tr>
+                <th>Gouvernorat</th>
+                <td>{{ adresse.gouvernorat }}</td>
+            </tr>
+            <tr>
+                <th>CodePostal</th>
+                <td>{{ adresse.codePostal }}</td>
+            </tr>
+            <tr>
+                <th>Pays</th>
+                <td>{{ adresse.pays }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ adresse.user }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_adresse_index') }}">back to list</a>
+    </div>
+{% endblock %}

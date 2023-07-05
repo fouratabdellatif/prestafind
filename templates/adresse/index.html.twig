@@ -1,0 +1,35 @@
+{% extends 'basepage.html.twig' %}
+
+{% block title %}My Addresses{% endblock %}
+
+{% block body %}
+    <h1>My Addresses</h1>
+
+    <a href="{{ path('app_adresse_new') }}">Create new Address</a>
+    <div style="display: flex;
+  flex-wrap: wrap; margin: 40px 0;">
+        {% for adresse in adresses %}
+      <div style="flex-basis: 25%;
+  padding: 0 6px;
+  box-sizing: border-box;">
+        <div class="uk-card uk-card-small uk-card-default uk-card-hover uk-border-rounded-large uk-overflow-hidden">
+            <div class="uk-card-media-top uk-position-top-left">
+              <span class="uk-label uk-text-bold uk-text-price">NumBatiment: {{ adresse.numBatiment }}</span>        
+          </div>
+          <div class="uk-card-body" style="margin-top: 20px;">
+            <h3 class="uk-card-title uk-margin-small-bottom">Pays: {{ adresse.pays }}</h3>
+            <div class="uk-text-muted uk-text-small">Gouvernorat: {{ adresse.gouvernorat }}</div>
+            <div class="uk-text-muted uk-text-small">Code Postal: {{ adresse.codePostal }}</div>
+            <div class="uk-text-muted uk-text-small">Rue: {{ adresse.rue }}</div>
+          </div>
+          <a href="{{ path('app_adresse_show', {'id': adresse.id}) }}" class="uk-position-cover"></a>
+          <a style="margin-left: 20px;" href="{{ path('app_adresse_show', {'id': adresse.id}) }}">show</a>
+        </div>
+      </div>
+        {% else %}
+      <div>
+      <p>no Addresses found
+      </div>
+        {% endfor %}
+        </div>
+{% endblock %}

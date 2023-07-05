@@ -1,0 +1,44 @@
+{% extends 'home/base.html.twig' %}
+
+{% block title %}Adresses{% endblock %}
+
+{% block content %}
+<div style="padding: 20px;">
+    <h1>Adresses</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>NumBatiment</th>
+                <th>Rue</th>
+                <th>Ville</th>
+                <th>Gouvernorat</th>
+                <th>CodePostal</th>
+                <th>Pays</th>
+                <th>User</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for adresse in adresses %}
+            <tr>
+                <td>{{ adresse.numBatiment }}</td>
+                <td>{{ adresse.rue }}</td>
+                <td>{{ adresse.ville }}</td>
+                <td>{{ adresse.gouvernorat }}</td>
+                <td>{{ adresse.codePostal }}</td>
+                <td>{{ adresse.pays }}</td>
+                <td>{{ adresse.user }}</td>
+                <td>
+                    <a href="{{ path('admin_adresse_show', {'id': adresse.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}

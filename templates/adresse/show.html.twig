@@ -1,0 +1,50 @@
+{% extends 'basepage.html.twig' %}
+
+{% block title %}Adresse{% endblock %}
+
+{% block body %}
+    <h1>Adresse</h1>
+
+    <table class="table">
+        <tbody>
+			<tr>
+				<th>QR Code</th>
+				<td>
+					{% if qrCode %}
+						<img src="{{ qrCode }}" alt="qr-code">
+					{% endif %}
+				</td>
+			</tr>
+            <tr>
+                <th>NumBatiment</th>
+                <td>{{ adresse.numBatiment }}</td>
+            </tr>
+            <tr>
+                <th>Rue</th>
+                <td>{{ adresse.rue }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ adresse.ville }}</td>
+            </tr>
+            <tr>
+                <th>Gouvernorat</th>
+                <td>{{ adresse.gouvernorat }}</td>
+            </tr>
+            <tr>
+                <th>CodePostal</th>
+                <td>{{ adresse.codePostal }}</td>
+            </tr>
+            <tr>
+                <th>Pays</th>
+                <td>{{ adresse.pays }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_adresse_index') }}">back to list</a>
+
+    <a href="{{ path('app_adresse_edit', {'id': adresse.id}) }}">edit</a>
+
+    {{ include('adresse/_delete_form.html.twig') }}
+{% endblock %}

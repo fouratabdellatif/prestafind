@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>User Print</title>
+    <link rel="stylesheet" href="/style.css" media="all" />
+</head>
+<body>
+<header class="clearfix">
+    <h1 align="center">Presstafind User </h1>
+    <hr></hr>
+    <div><span>User N° </span> {{ user.id }} </div>
+    <hr></hr>
+    <div id="company" class="clearfix">
+        <div><span>Nom: </span> {{ user.nom }}  </div>
+        <div><span>Prenom: </span> {{ user.prenom }}  </div>
+        <div><span>Email: </span> {{ user.email }}  </div>
+        <div><span>Role: </span> {{ user.role }}  </div>
+        <div><span>Adresses: </span>
+                {% for adresse in user.adresses %}
+                    <li>{{ adresse.pays }}</li>
+                {% endfor %}
+                </div>
+        <hr></hr>
+    </div>
+</header>
+
+</body>

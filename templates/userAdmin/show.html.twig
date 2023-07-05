@@ -1,0 +1,53 @@
+{% extends 'home/base.html.twig' %}
+
+{% block title %}
+User
+{% endblock %}
+
+{% block content %}
+<div style="padding: 20px;">
+    <h1>User</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Role</th>
+                {# <td>{{ user.roles ? user.roles|json_encode : '' }}</td> #}
+                <td>{{ user.role }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ user.password }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ user.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ user.nom }}</td>
+            </tr>
+            <tr>
+                <th>Adresses</th>
+                <td>
+                <ul>
+                {% for adresse in user.adresses %}
+                    <li>{{ adresse.pays }}</li>
+                {% endfor %}
+                </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_user_index') }}">back to list</a>
+
+    <a href="{{ path('admin_user_edit', {'id': user.id}) }}">edit</a>
+
+    {# {{ include('userAdmin/_delete_form.html.twig') }} #}
+    </div>
+{% endblock %}

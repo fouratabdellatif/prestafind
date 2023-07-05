@@ -1,0 +1,41 @@
+{{ form_start(form,{'attr': {'novalidate': 'novalidate'}}) }}
+<div class="uk-width-1-1 uk-margin">
+	{{form_label(form.numBatiment,'Num Batiment : ',{'attr':{'class':'uk-form-label'}})}}
+	{{form_widget(form.numBatiment,{'attr':{'class':'uk-input uk-form-large'}})}}
+	{{ form_errors(form.numBatiment,{'attr':{'class':'uk-input uk-form-large'}}) }}
+</div>
+
+<div class="uk-width-1-1 uk-margin">
+	{{form_label(form.rue,'Rue : ',{'attr':{'class':'uk-form-label'}})}}
+	{{form_widget(form.rue,{'attr':{'class':'uk-input uk-form-large'}})}}
+	{{ form_errors(form.rue,{'attr':{'class':'uk-input uk-form-large'}}) }}
+</div>
+
+<div class="uk-width-1-1 uk-margin">
+	{{form_label(form.ville,'ville : ',{'attr':{'class':'uk-form-label'}})}}
+	{{form_widget(form.ville,{'attr':{'class':'uk-input uk-form-large'}})}}
+	{{ form_errors(form.ville,{'attr':{'class':'uk-input uk-form-large'}}) }}
+</div>
+
+<div class="uk-width-1-1 uk-margin">
+	{{form_label(form.gouvernorat,'Gouvernorat : ',{'attr':{'class':'uk-form-label'}})}}
+	{{form_widget(form.gouvernorat,{'attr':{'class':'uk-input uk-form-large'}})}}
+	{{ form_errors(form.gouvernorat,{'attr':{'class':'uk-input uk-form-large'}}) }}
+</div>
+
+<div class="uk-width-1-1 uk-margin">
+	{{form_label(form.codePostal,'Code Postal : ',{'attr':{'class':'uk-form-label'}})}}
+	{{form_widget(form.codePostal,{'attr':{'class':'uk-input uk-form-large'}})}}
+	{{ form_errors(form.codePostal,{'attr':{'class':'uk-input uk-form-large'}}) }}
+</div>
+
+<div class="uk-width-1-1 uk-margin">
+	{{form_label(form.pays,'Pays : ',{'attr':{'class':'uk-form-label'}})}}
+	{{form_widget(form.pays,{'attr':{'class':'uk-input uk-form-large'}})}}
+	{{ form_errors(form.pays,{'attr':{'class':'uk-input uk-form-large'}}) }}
+</div>
+
+<div class="uk-width-1-1 uk-text-center">
+	<button type="submit" class="uk-button uk-button-primary uk-button-large">Register</button>
+</div>
+{{ form_end(form) }}
